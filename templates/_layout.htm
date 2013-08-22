@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>{{ title }}</title>
+	<meta name="keywords" content="{{ keywords }}" />
+	<meta name="description" content="{{ description }}" />
+	<meta name="viewport" content="width=device-width" />
+	{% block head %} {% end %}
+	<style>
+		*
+		{
+			margin: 0;
+			padding: 0;
+		}
+		body
+		{
+			font-size: 12px;
+			line-height: 1.5em;
+			color: #CCCCCC;
+			background-color: rgb(46, 34, 10);
+		}
+		a
+		{
+			text-decoration: none;
+		}
+		a:hover
+		{
+			text-decoration: underline;
+		}
+		.banner
+		{
+			width: 1000px;
+			margin: 0 auto;
+			position: relative;
+			clear: both;
+			display: block;
+		}
+		
+		.header
+		{
+			height: 100px;
+		}
+		.logo
+		{
+			margin-top: 20px;
+		}
+		.ulnav
+		{
+			list-style-type: none;
+		}
+		
+		.ulnav li
+		{
+			display: inline;
+		}
+		
+		.mininav
+		{
+			float: right;
+			margin-top: 10px;
+		}
+		.mininav li
+		{
+			margin-left: 1em;
+		}
+		
+		
+		.login
+		{
+			position: absolute;
+			right: 0;
+			bottom: 10px;
+		}
+		.login li
+		{
+			margin-left: 0.5em;
+		}
+		.menubox
+		{
+			display: block;
+			height: 36px;
+			font-size: 14px;
+			background-image: url(/static/img/menu.png);
+			background-position: 0 0;
+			background-repeat: no-repeat;
+			padding-left: 6px;
+			border-radius: 5px;
+			-ms-border-radius: 5px;
+			-moz-border-radius: 5px;
+			-webkit-border-radius: 5px;
+		}
+		.menu
+		{
+			display: block;
+			height: 36px;
+			width: 636px;
+			padding-right: 6px;
+			background-image: url(/static/img/menu.png);
+			background-position: right bottom;
+			background-repeat: no-repeat;
+			border-radius: 5px;
+			-ms-border-radius: 5px;
+			-moz-border-radius: 5px;
+			-webkit-border-radius: 5px;
+		}
+		.menu li
+		{
+			float: left;
+			background-image: url(/static/img/menu.png);
+			background-position: 0 -72px;
+			background-repeat: repeat-x;
+		}
+		.menu a
+		{
+			color: White;
+			letter-spacing: 1px;
+			display: block;
+			height: 36px;
+			width: 120px;
+			padding-left: 6px;
+			text-align: center;
+			line-height: 36px;
+			text-decoration: none;
+			background-image: url(/static/img/menu.png);
+			background-position: 0 -36px;
+			background-repeat: no-repeat;
+		}
+		.menu li a:hover span, .menu li.on a span
+		{
+			padding: 6px 18px 5px 18px;
+			font-weight: bold;
+			background-color: #FFEA63;
+			color: red;
+			border-radius: 5px;
+			-moz-border-radius: 5px;
+			-webkit-border-radius: 5px;
+			-moz-box-shadow: 3px 3px 3px #173A62 inset;
+			-webkit-box-shadow: 3px 3px 3px #173A62 inset;
+			box-shadow: 3px 3px 3px #173A62 inset;
+		}
+		.content
+		{
+			margin-top: 10px;
+		}
+		.footer
+		{
+			text-align: center;
+			vertical-align: center;
+			height: 100px;
+			line-height: 100px;
+		}
+	</style>
+</head>
+<body>
+	<header class="banner header">
+		<img class="logo" alt="" src="http://firefox.com.cn/media/img/firefox/template/header-logo.png?2013-06" />
+		<ul class="mininav ulnav">
+			<li><a href="javascript:void(0);">设为首页</a></li>
+			<li><a href="javascript:void(0);">加入收藏</a></li>
+			<li><a href="javascript:void(0);">赞助本站</a></li>
+			<li><a href="javascript:void(0);">投诉建议</a></li>
+		</ul>
+		<div class="login">
+			<form action="/login/" method="post">
+			<ul class="ulnav">
+				<li>用户名:<input type="text" size="10" name="username" /></li>
+				<li>密码:<input type="password" size="10" name="password" /></li>
+				<li>
+					<input type="submit" value="登录" /></li>
+				<li><a href="/sighup/">忘记密码?</a></li>
+				<li><a href="/sighup/">注册</a></li>
+			</ul>
+			</form>
+		</div>
+	</header>
+	<nav class="banner nav">
+		<div class="menubox">
+			<ul class="ulnav menu">
+				<li><a href="/" style="background-image: none;"><span>推荐服务器</span></a></li>
+				<li><a href="/weilai/"><span>未来将开服</span></a></li>
+				<li><a href="/lishi/"><span>历史已开服</span></a></li>
+				<li><a href="/publish/"><span>发布服务器</span></a></li>
+				<li><a href="/publish/" style="padding-right: 6px;"><span>用 户 中 心 </span></a></li>
+			</ul>
+		</div>
+	</nav>
+	<section class="banner content">
+	{% block main %}{% end %} 
+	</section>
+	<footer class="banner footer">
+		Copyright 2008-2013
+	</footer>
+</body>
+</html>

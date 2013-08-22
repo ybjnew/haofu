@@ -1,0 +1,1 @@
+mysqldump -uhaofuadm -pyin,bingjun haofu > db.sql

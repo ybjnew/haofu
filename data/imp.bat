@@ -1,0 +1,1 @@
+mysql -uhaofuadm -pyin,bingjun haofu < db.sql
