@@ -6,7 +6,6 @@ Created on 2013-6-19
 
 import tornado.ioloop
 import tornado.httpserver
-import tornado.ioloop
 from tornado.options import define, options
 
 from common.app import App
